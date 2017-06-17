@@ -26,13 +26,10 @@ def check_guess(guess, number)
 end
 
 def guess_style(guess, number)
-  if (guess > number) && (guess < (number + 5))
+  check = check_guess(guess, number)
+  if check == "Too high!" || check == "Too low!"
     "#ff6666"
-  elsif (guess > number) && (guess > (number + 5))
-    "#ff0000"
-  elsif (guess < number) && (guess > (number - 5))
-    "#ff6666"
-  elsif (guess < number) && (guess < (number + 5))
+  elsif check == "Way too high!" || check == "Way too low!"
     "#ff0000"
   else
     "#00ff00"
