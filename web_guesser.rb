@@ -27,9 +27,9 @@ end
 
 def guess_style(guess, number)
   check = check_guess(guess, number)
-  if check == "Too high!" || check == "Too low!"
+  if check.include?('Too')
     "#ff6666"
-  elsif check == "Way too high!" || check == "Way too low!"
+  elsif check.include?('Way')
     "#ff0000"
   else
     "#00ff00"
